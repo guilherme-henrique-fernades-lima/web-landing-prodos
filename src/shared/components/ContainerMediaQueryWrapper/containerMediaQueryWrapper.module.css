@@ -1,0 +1,44 @@
+.container {
+  transition: all 0.3s ease-in-out;
+  height: 100%;
+}
+
+/* Extra-small (até 599px) */
+@media (max-width: 599px) {
+  .container {
+    /* border: 1px solid white; */
+    width: 100%;
+  }
+}
+
+/* Small (600px até 899px) */
+@media (min-width: 600px) and (max-width: 899px) {
+  .container {
+    /* border: 1px solid white; */
+    width: 90%;
+  }
+}
+
+/* Medium (900px até 1199px) */
+@media (min-width: 900px) and (max-width: 1199px) {
+  .container {
+    /* border: 1px solid white; */
+    width: 85%;
+  }
+}
+
+/* Large (1200px até 1535px) */
+@media (min-width: 1200px) and (max-width: 1535px) {
+  .container {
+    /* border: 1px solid white; */
+    width: 80%;
+  }
+}
+
+/* Extra-large (1536px ou mais) */
+@media (min-width: 1536px) {
+  .container {
+    /* border: 3px solid white; */
+    width: 80%;
+  }
+}

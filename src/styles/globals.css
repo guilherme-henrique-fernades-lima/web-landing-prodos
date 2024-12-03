@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body,
+:root {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+#root,
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  font-family: var(--font-lato-regular), sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-branding);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+::-webkit-scrollbar-thumb:disabled {
+  background: #ccc;
+}
+
+::selection {
+  background: var(--branding);
+  color: var(--text-contrast);
+}
