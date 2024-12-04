@@ -1,14 +1,15 @@
+@import "@/styles/_variables.scss";
+@import "@/styles/_media.scss";
+
 .container {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-
   height: 100%;
 }
 
 .brandName {
   margin-left: 10px;
-  font-size: var(--font-size-subheading);
   font-family: var(--font-manual-expanded), sans-serif;
-  color: var(--branding);
+  color: $branding;
 }

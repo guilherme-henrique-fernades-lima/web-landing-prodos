@@ -1,8 +1,5 @@
 import localFont from "next/font/local";
-
-//Estilos globais e variaveis
-import "../styles/globals.css";
-import "../styles/variables.css";
+import "../styles/globals.scss";
 
 //Layout
 import LayoutClientSide from "../shared/components/LayoutClientSide";

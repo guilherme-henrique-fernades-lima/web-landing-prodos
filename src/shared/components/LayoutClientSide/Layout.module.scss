@@ -1,3 +1,15 @@
+@import "@/styles/_variables.scss";
+@import "@/styles/_media.scss";
+
+.containerPage {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+}
+
 .headerContainer {
   display: flex;
   align-items: flex-start;
@@ -5,7 +17,7 @@
   flex-direction: column;
   width: 100%;
   height: 150px;
-  border-bottom: 1px solid var(--bg-tertiary);
+  border-bottom: 1px solid $bg-tertiary;
 }
 
 .headerContacts {
@@ -14,10 +26,11 @@
   justify-content: center;
   width: 100%;
   height: 45px;
-  background-color: var(--branding);
+  background-color: $branding;
 }
 
 .contentContacts {
+  @include container;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,8 +41,15 @@
 .socialIcons svg {
   width: 26px;
   height: 26px;
-  color: var(--bg-primary);
+  color: $bg-primary;
   margin-right: 10px;
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+
+    transform: scale(1.1);
+  }
 }
 
 .contacts {
@@ -46,8 +66,8 @@
 }
 
 .phone a {
-  color: var(--text-contrast);
-  font-size: var(--font-size-body);
+  color: $text-contrast;
+
   &:hover {
     text-decoration: underline;
   }
@@ -56,7 +76,7 @@
 .phone svg {
   width: 18px;
   height: 18px;
-  color: var(--bg-primary);
+  color: $bg-primary;
   margin-right: 10px;
 }
 
@@ -69,13 +89,12 @@
 .email svg {
   width: 20px;
   height: 20px;
-  color: var(--bg-primary);
+  color: $bg-primary;
   margin-right: 10px;
 }
 
 .email a {
-  color: var(--text-contrast);
-  font-size: var(--font-size-body);
+  color: $text-contrast;
 
   &:hover {
     text-decoration: underline;
@@ -91,6 +110,7 @@
 }
 
 .headerContent {
+  @include container;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -115,12 +135,33 @@
 }
 
 .navItem {
-  font-size: var(--font-size-body);
   font-family: var(--font-manual-expanded), sans-serif;
 }
 
+.navItemButtonContact {
+  font-family: var(--font-manual-expanded), sans-serif;
+  color: $text-contrast;
+}
+
+.navItemButtonContact .linkButton {
+  text-decoration: none;
+  padding: 12px 16px;
+  transition: all 0.2s ease-in-out;
+
+  background-color: $branding;
+  color: $text-contrast;
+  border-radius: $border-xl;
+  border: 2px solid transparent;
+
+  &:hover {
+    border: 2px solid $branding;
+    background-color: $bg-primary;
+    color: $text-branding;
+  }
+}
+
 .navLink.active {
-  color: var(--branding);
+  color: $branding;
 }
 
 .navLink {
@@ -131,6 +172,6 @@
   transition: background-color 0.3s ease;
 
   &:hover {
-    color: var(--text-branding);
+    color: $text-branding;
   }
 }

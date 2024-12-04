@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/shared/components/LogoHeader/LogoHeader.module.css";
+import styles from "@/shared/components/LogoHeader/LogoHeader.module.scss";
 import Image from "next/image";
 
 export default function LogoHeader() {
