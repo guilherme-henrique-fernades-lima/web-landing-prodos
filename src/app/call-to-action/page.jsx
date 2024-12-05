@@ -1,9 +1,9 @@
 "use client";
+import Image from "next/image";
 
 import styles from "./styles.module.scss";
 
 //Components
-import TitleSection from "@/shared/components/TitleSection";
 import ButtonAnchor from "@/shared/components/ButtonAnchor";
 
 export default function CallToAction() {
@@ -24,8 +24,17 @@ export default function CallToAction() {
           </p>
 
           <div style={{ marginTop: "30px" }} />
-          <ButtonAnchor label="Entre em contato" />
+          <ButtonAnchor label="Entre em contato" contrastButton />
         </div>
+
+        <Image
+          src="/img/hand-chating.png"
+          alt="Mão interagindo com smartphone"
+          width={400}
+          height={400}
+          quality={100}
+          className={styles.image}
+        />
       </div>
     </section>
   );
