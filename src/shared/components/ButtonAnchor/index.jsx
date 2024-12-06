@@ -2,17 +2,17 @@
 
 import styles from "@/shared/components/ButtonAnchor/ButtonAnchor.module.scss";
 
-//Icons
-import { FiExternalLink } from "react-icons/fi";
-
 export default function ButtonAnchor({
   label,
   pathUrl,
-  hasIcon,
+  icon,
   contrastButton,
+  onClick,
 }) {
   return (
     <a
+      target="_blank"
+      rel="noopener noreferrer"
       href={pathUrl ? pathUrl : "#"}
       className={`${
         contrastButton ? styles.anchorButtonContrast : styles.anchorButton
@@ -20,7 +20,7 @@ export default function ButtonAnchor({
     >
       {label}
 
-      {hasIcon && <FiExternalLink />}
+      {icon && icon}
     </a>
   );
 }

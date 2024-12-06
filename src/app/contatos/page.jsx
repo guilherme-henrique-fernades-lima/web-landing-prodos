@@ -1,16 +1,44 @@
 "use client";
+import { useState } from "react";
 import styles from "./styles.module.scss";
 
 //Components
 import TitleSection from "@/shared/components/TitleSection";
+import ButtonAnchor from "@/shared/components/ButtonAnchor";
 
 //Icons
 import { IoIosMail } from "react-icons/io";
 import { FaWhatsapp } from "react-icons/fa6";
 import { IoLocationSharp } from "react-icons/io5";
 import { HiMiniDevicePhoneMobile } from "react-icons/hi2";
+import { IoMdRadioButtonOff } from "react-icons/io";
+import { IoMdRadioButtonOn } from "react-icons/io";
+import { IoIosSend } from "react-icons/io";
+import { FaInstagram } from "react-icons/fa6";
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaYoutube } from "react-icons/fa";
 
 export default function Contatos() {
+  const [service, setService] = useState("");
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  function setServiceChosen(target) {
+    setService(target);
+  }
+
+  function handleSendMessage() {
+    console.log({
+      name: name,
+      email: email,
+      message: message,
+    });
+  }
+
   return (
     <section id="section-contacts" className={styles.section}>
       <TitleSection
@@ -33,26 +61,109 @@ um orçamento sem compromisso"
             <FaWhatsapp />
             <div className={styles.text}>
               <h3>Whatsapp</h3>
-              <a>email@email.com</a>
+              <a>(86) 99999-9999</a>
             </div>
           </div>
           <div className={styles.card}>
             <IoLocationSharp />
             <div className={styles.text}>
               <h3>Endereço</h3>
-              <a>email@email.com</a>
+              <a>Rua exemplo, 123 - Teresina, PI</a>
             </div>
           </div>
           <div className={styles.card}>
             <HiMiniDevicePhoneMobile />
             <div className={styles.text}>
               <h3>Redes sociais</h3>
-              <a>email@email.com</a>
+              <div className={styles.socialIcons}>
+                <FaInstagram />
+                <FaFacebookSquare />
+                <FaLinkedin />
+                <FaSquareXTwitter />
+                <FaYoutube />
+              </div>
             </div>
           </div>
         </div>
 
-        <div className={styles.formWrapper}></div>
+        <div className={styles.formWrapper}>
+          <div className={styles.inputWrapper}>
+            <label htmlFor="name">Nome</label>
+            <input
+              id="name"
+              autocomplete="off"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+
+          <div className={styles.inputWrapper}>
+            <label htmlFor="email">E-mail</label>
+            <input
+              id="email"
+              autocomplete="off"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+
+          <div className={styles.inputWrapper}>
+            <label htmlFor="message">Mensagem</label>
+            <textarea
+              id="message"
+              autocomplete="off"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+          </div>
+          <div className={styles.serviceChosen}>
+            <div
+              id="development"
+              className={`${styles.option} ${
+                service === "development" ? styles.optionSelected : ""
+              } `}
+              onClick={(e) => {
+                setServiceChosen(e.currentTarget.id);
+              }}
+              style={{ marginRight: "10px" }}
+            >
+              {service === "development" ? (
+                <IoMdRadioButtonOn />
+              ) : (
+                <IoMdRadioButtonOff />
+              )}
+
+              <h4>Desenvolvimento de sistemas</h4>
+            </div>
+
+            <div
+              id="marketing"
+              className={`${styles.option} ${
+                service === "marketing" ? styles.optionSelected : ""
+              } `}
+              onClick={(e) => {
+                setServiceChosen(e.currentTarget.id);
+              }}
+            >
+              {service === "marketing" ? (
+                <IoMdRadioButtonOn />
+              ) : (
+                <IoMdRadioButtonOff />
+              )}
+
+              <h4>Marketing digital</h4>
+            </div>
+          </div>
+
+          <div style={{ marginTop: "20px" }} />
+          <ButtonAnchor
+            label="Enviar mensagem"
+            icon={<IoIosSend />}
+            pathUrl={`https://wa.me/5586999277101?text=${encodeURIComponent(
+              `Olá, gostaria de enviar as seguintes informações:\n\nNome: ${name}\nE-mail: ${email}\nMensagem: ${message}`
+            )}`}
+          />
+        </div>
       </div>
     </section>
   );

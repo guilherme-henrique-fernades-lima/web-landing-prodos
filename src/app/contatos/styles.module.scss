@@ -24,7 +24,7 @@
 }
 
 .cardsWrapper {
-  flex: 0.3;
+  flex: 0.4;
   .card {
     display: flex;
     align-items: flex-start;
@@ -45,7 +45,7 @@
     .text {
       margin-left: 20px;
       h3 {
-        color: $branding;
+        color: $text-title;
         margin-bottom: 10px;
       }
 
@@ -53,12 +53,125 @@
         color: $text-body;
       }
     }
+
+    .socialIcons svg {
+      width: 26px;
+      height: 26px;
+      color: $text-body;
+      margin-right: 10px;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+        color: $branding;
+      }
+    }
   }
 }
 
 .formWrapper {
+  flex: 0.6;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
+  margin-left: 20px;
+
+  .inputWrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+
+    label {
+      color: $text-title;
+      margin-bottom: 10px;
+      // font-family: var(--font-manual-expanded), sans-serif;
+    }
+
+    input {
+      height: 54px;
+      width: 100%;
+      background-color: $bg-secondary;
+      border-radius: $border-default;
+      border: 2px solid transparent;
+      margin-bottom: 20px;
+      color: $text-title;
+      caret-color: $branding;
+      padding: 14px;
+
+      &:focus {
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        outline: none;
+        border-color: $branding;
+        box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+      }
+    }
+
+    textarea {
+      resize: none;
+      height: 154px;
+      width: 100%;
+      background-color: $bg-secondary;
+      border-radius: $border-default;
+      border: 2px solid transparent;
+      margin-bottom: 10px;
+      color: $text-title;
+      caret-color: $branding;
+      padding: 14px;
+
+      &::placeholder {
+        color: $text-body;
+        font-style: italic;
+      }
+
+      &:focus {
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        outline: none;
+        border-color: $branding;
+        box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+      }
+    }
+  }
+
+  .serviceChosen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+
+    .option {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: row;
+      min-height: 100px;
+      flex: 0.5;
+      padding: 20px;
+      border: 2px solid $bg-secondary;
+      border-radius: $border-default;
+      cursor: pointer;
+
+      svg {
+        width: 30px;
+        height: 30px;
+        color: $branding;
+        margin-right: 20px;
+      }
+
+      h4 {
+        color: $text-body;
+      }
+
+      &:hover {
+        border-color: $branding;
+      }
+    }
+
+    .optionSelected {
+      border-color: $branding;
+    }
+  }
 }

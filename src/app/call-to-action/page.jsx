@@ -6,6 +6,9 @@ import styles from "./styles.module.scss";
 //Components
 import ButtonAnchor from "@/shared/components/ButtonAnchor";
 
+//Icons
+import { FiExternalLink } from "react-icons/fi";
+
 export default function CallToAction() {
   return (
     <section className={styles.section}>
@@ -24,7 +27,11 @@ export default function CallToAction() {
           </p>
 
           <div style={{ marginTop: "30px" }} />
-          <ButtonAnchor label="Entre em contato" contrastButton />
+          <ButtonAnchor
+            label="Entre em contato"
+            contrastButton
+            icon={<FiExternalLink />}
+          />
         </div>
 
         <Image
