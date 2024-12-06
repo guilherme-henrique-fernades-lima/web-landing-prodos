@@ -7,6 +7,10 @@ import OurClients from "./nossos-clientes/page";
 import Portfolio from "./portfolio/page";
 import CallToAction from "./call-to-action/page";
 import Faq from "./faq/page";
+import Contacs from "./contatos/page";
+
+//Components
+import Footer from "../shared/components/Footer";
 
 export default function Index() {
   return (
@@ -16,7 +20,9 @@ export default function Index() {
       <CallToAction />
       <OurClients />
       <Portfolio />
+      <Contacs />
       <Faq />
+      <Footer />
     </>
   );
 }

@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+
 import "../styles/globals.scss";
 
 //Layout
