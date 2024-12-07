@@ -48,7 +48,7 @@ a {
 }
 
 h1 {
-  @include responsive-font(32px, 42px, 52px, 3.75rem, 3.75rem);
+  @include responsive-font(28px, 42px, 52px, 3.75rem, 3.75rem);
 }
 
 h2 {
@@ -60,7 +60,7 @@ h3 {
 }
 
 h4 {
-  @include responsive-font(18px, 18px, 18px, 20px, 20px);
+  @include responsive-font(16px, 18px, 18px, 20px, 20px);
 }
 
 label {
@@ -68,9 +68,9 @@ label {
 }
 
 span {
-  @include responsive-font(12px, 14px, 16px, 18px, 1rem);
+  @include responsive-font(14px, 16px, 16px, 18px, 20px);
 }
 
 p {
-  @include responsive-font(14px, 16px, 18px, 20px, 22px);
+  @include responsive-font(14px, 16px, 16px, 18px, 20px);
 }

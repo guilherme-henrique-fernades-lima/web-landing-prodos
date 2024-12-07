@@ -176,6 +176,7 @@
       .option {
         width: 100%;
         margin: 10px 0;
+        margin-right: 0;
       }
     }
 
@@ -190,6 +191,11 @@
       border: 2px solid $bg-tertiary;
       border-radius: $border-default;
       cursor: pointer;
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
 
       svg {
         width: 30px;
@@ -204,6 +210,10 @@
 
       &:hover {
         border-color: $branding;
+      }
+
+      @include sm() {
+        margin-right: 0;
       }
     }
 

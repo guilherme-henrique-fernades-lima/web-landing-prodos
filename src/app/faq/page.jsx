@@ -19,7 +19,7 @@ const AccordionItem = ({ question, answer, isOpen, onClick }) => (
       }`}
       onClick={onClick}
     >
-      <h3 className={isOpen ? styles.openTitle : ""}>{question}</h3>
+      <p className={isOpen ? styles.openTitle : ""}>{question}</p>
       <div className={styles.boxIcon}>
         {isOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
       </div>

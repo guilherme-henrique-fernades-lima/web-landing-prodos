@@ -131,7 +131,6 @@ um orçamento sem compromisso"
               onClick={(e) => {
                 setServiceChosen(e.currentTarget.id);
               }}
-              style={{ marginRight: "10px" }}
             >
               {service === "development" ? (
                 <IoMdRadioButtonOn />

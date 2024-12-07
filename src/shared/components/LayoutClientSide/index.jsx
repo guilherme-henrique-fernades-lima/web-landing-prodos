@@ -164,9 +164,7 @@ export default function LayoutClientSide({ children }) {
                   id="home-section"
                   onClick={(e) => setSectionNavbar(e.target.id)}
                   href="#home"
-                  className={`${styles.navLink} ${
-                    section === "home-section" ? styles.active : ""
-                  }`}
+                  className={styles.navLink}
                 >
                   HOME
                 </a>
@@ -174,9 +172,7 @@ export default function LayoutClientSide({ children }) {
               <li className={styles.navItem}>
                 <a
                   href="#about"
-                  className={`${styles.navLink} ${
-                    section === "services-section" ? styles.active : ""
-                  }`}
+                  className={styles.navLink}
                   id="services-section"
                   onClick={(e) => setSectionNavbar(e.target.id)}
                 >
@@ -186,9 +182,7 @@ export default function LayoutClientSide({ children }) {
               <li className={styles.navItem}>
                 <a
                   href="#services"
-                  className={`${styles.navLink} ${
-                    section === "who-we-are-section" ? styles.active : ""
-                  }`}
+                  className={styles.navLink}
                   id="who-we-are-section"
                   onClick={(e) => setSectionNavbar(e.target.id)}
                 >
@@ -198,9 +192,7 @@ export default function LayoutClientSide({ children }) {
               <li className={styles.navItem}>
                 <a
                   href="#contact"
-                  className={`${styles.navLink} ${
-                    section === "clients-section" ? styles.active : ""
-                  }`}
+                  className={styles.navLink}
                   id="clients-section"
                   onClick={(e) => setSectionNavbar(e.target.id)}
                 >
@@ -211,13 +203,44 @@ export default function LayoutClientSide({ children }) {
               <li className={styles.navItem}>
                 <a
                   href="#contact"
-                  className={`${styles.navLink} ${
-                    section === "contacts-section" ? styles.active : ""
-                  }`}
+                  className={styles.navLink}
                   id="contacts-section"
                   onClick={(e) => setSectionNavbar(e.target.id)}
                 >
                   CONTATOS
+                </a>
+              </li>
+
+              <li className={styles.navItem}>
+                <a
+                  href="#portfolio"
+                  className={styles.navLink}
+                  id="portfolio-section"
+                  onClick={(e) => setSectionNavbar(e.target.id)}
+                >
+                  PORTFÓLIO
+                </a>
+              </li>
+
+              <li className={styles.navItem}>
+                <a
+                  href="#testimonials"
+                  className={styles.navLink}
+                  id="testimonials-section"
+                  onClick={(e) => setSectionNavbar(e.target.id)}
+                >
+                  TESTEMUNHOS
+                </a>
+              </li>
+
+              <li className={styles.navItem}>
+                <a
+                  href="#faq"
+                  className={styles.navLink}
+                  id="faq-section"
+                  onClick={(e) => setSectionNavbar(e.target.id)}
+                >
+                  PERGUNTAS FREQUENTES (FAQ)
                 </a>
               </li>
             </ul>
