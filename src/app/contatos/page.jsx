@@ -21,22 +21,13 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 
 export default function Contatos() {
-  const [service, setService] = useState("");
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [service, setService] = useState("");
 
   function setServiceChosen(target) {
     setService(target);
-  }
-
-  function handleSendMessage() {
-    console.log({
-      name: name,
-      email: email,
-      message: message,
-    });
   }
 
   return (
@@ -87,35 +78,50 @@ um orçamento sem compromisso"
         </div>
 
         <div className={styles.formWrapper}>
+          <h3 className={styles.textOrcamento}>
+            Faça seu orçamento sem compromisso
+          </h3>
           <div className={styles.inputWrapper}>
-            <label htmlFor="name">Nome</label>
+            <label htmlFor="name" className={styles.label}>
+              Nome
+            </label>
             <input
               id="name"
-              autocomplete="off"
+              autoComplete="off"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
 
           <div className={styles.inputWrapper}>
-            <label htmlFor="email">E-mail</label>
+            <label htmlFor="email" className={styles.label}>
+              E-mail
+            </label>
             <input
               id="email"
-              autocomplete="off"
+              autoComplete="off"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
           <div className={styles.inputWrapper}>
-            <label htmlFor="message">Mensagem</label>
+            <label htmlFor="message" className={styles.label}>
+              Mensagem
+            </label>
             <textarea
               id="message"
-              autocomplete="off"
+              autoComplete="off"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
           </div>
+
+          <div style={{ marginTop: "10px" }} />
+
+          <label className={styles.label}>
+            Que tipo de serviço você tem interesse?
+          </label>
           <div className={styles.serviceChosen}>
             <div
               id="development"
@@ -160,7 +166,7 @@ um orçamento sem compromisso"
             label="Enviar mensagem"
             icon={<IoIosSend />}
             pathUrl={`https://wa.me/5586999277101?text=${encodeURIComponent(
-              `Olá, gostaria de enviar as seguintes informações:\n\nNome: ${name}\nE-mail: ${email}\nMensagem: ${message}`
+              `Olá, PRÓDOS DIGITAL! tudo bem?\n\nMeu nome é: ${name}\nMeu e-mail é: ${email}\nTive interesse sobre o tipo de serviço: ${service}\n\nMensagem: ${message}`
             )}`}
           />
         </div>

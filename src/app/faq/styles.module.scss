@@ -22,6 +22,10 @@
   justify-content: space-between;
   flex-direction: row;
 
+  @include lg() {
+    flex-direction: column;
+  }
+
   .faq {
     display: flex;
     align-items: flex-start;

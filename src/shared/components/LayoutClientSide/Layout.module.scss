@@ -247,7 +247,7 @@
   right: -60%;
   width: 60%;
   height: 100%;
-  background-color: $bg-secondary;
+  background-color: $bg-primary;
   z-index: 200;
   display: flex;
   flex-direction: column;
@@ -259,7 +259,39 @@
   }
 }
 
-// Lista de navegação do Drawer
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px 20px;
+
+  .closeButton {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: $border-default;
+    background-color: $bg-secondary;
+
+    &:active {
+      background-color: $bg-tertiary;
+    }
+
+    svg {
+      width: 36px;
+      height: 36px;
+      color: $branding;
+    }
+
+    @include sm() {
+      display: flex;
+    }
+  }
+}
+
 .drawerNav {
   display: flex;
   align-items: center;
@@ -274,19 +306,26 @@
     flex-direction: column;
     list-style: none;
     padding: 0;
+    width: 100%;
 
     .navItem {
       margin-bottom: 15px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 20px;
 
       .navLink {
         text-decoration: none;
-        color: #333;
+        color: $text-title;
         font-size: 18px;
         font-weight: bold;
-        display: block;
+        display: flex;
+        text-align: right;
 
         &:hover {
-          color: #555;
+          color: $branding;
         }
       }
     }

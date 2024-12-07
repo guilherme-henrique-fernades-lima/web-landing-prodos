@@ -15,6 +15,7 @@ import { FaYoutube } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { IoMenu } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 
 export default function LayoutClientSide({ children }) {
   const [section, setSection] = useState("home-section");
@@ -150,6 +151,12 @@ export default function LayoutClientSide({ children }) {
         <div
           className={`${styles.drawer} ${isMenuOpen ? styles.drawerOpen : ""}`}
         >
+          <div className={styles.closeButton}>
+            <button className={styles.closeButton} onClick={toggleMenu}>
+              <IoClose />
+            </button>
+          </div>
+
           <nav className={styles.drawerNav}>
             <ul className={styles.navList}>
               <li className={styles.navItem}>
@@ -200,10 +207,13 @@ export default function LayoutClientSide({ children }) {
                   CLIENTES
                 </a>
               </li>
-              <li className={styles.navItemButtonContact}>
+
+              <li className={styles.navItem}>
                 <a
-                  className={styles.linkButton}
                   href="#contact"
+                  className={`${styles.navLink} ${
+                    section === "contacts-section" ? styles.active : ""
+                  }`}
                   id="contacts-section"
                   onClick={(e) => setSectionNavbar(e.target.id)}
                 >
